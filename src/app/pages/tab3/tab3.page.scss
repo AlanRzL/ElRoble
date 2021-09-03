@@ -1,0 +1,156 @@
+.card-date {
+    font-size: 0.63rem !important;
+    line-height: 11pt;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: -4px;
+}
+
+ion-avatar img {
+    border-radius: 5%;
+}
+
+.image-work {
+    border-radius: 5%;
+    width: 75px;
+    height: 75px;
+    // background-color: red;
+    /* Full height */
+    // height: 100%; 
+    /* Imagen centrada y colocada de forma elegante */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aligname {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.aligname {
+    display: inline-block;
+    vertical-align: top;
+}
+
+ion-card {
+    margin: 10px 10px 0px 10px;
+    padding: 5px;
+}
+
+.delivery-address-name {
+    margin-bottom: 10px;
+    font-family: Acumin !important;
+    font-size: 22px;
+    color: var(--ion-color-primary);
+}
+
+.delivery-addres-icon {
+    font-size: 40px;
+}
+
+.delivery-address-text {
+    font-size: 12px;
+    line-height: 11pt;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--ion-color-primary) !important;
+}
+
+ion-list {
+    ion-item {
+        // margin-bottom: 10px;
+    }
+}
+
+ion-footer {
+    background-color: #f4f5f8 !important;
+    ion-grid {
+        background-color: #f4f5f8 !important;
+    }
+    h1 {
+        margin-top: 5px;
+    }
+    h5 {
+        margin-bottom: 0px;
+    }
+}
+
+.pay-total-amount-card {
+    margin: 10px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.pay-button {
+    --border-radius: 0px 0px 8px 8px;
+    width: 100%;
+}
+
+.product-name {
+    margin: 0px;
+    font-size: 15px;
+}
+
+.single-product-total-price {
+    font-size: 15px;
+}
+
+.single-product-qty {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.delete-product-button {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: gray;
+}
+
+#card-errors {
+    color: red;
+    margin-top: 18px;
+}
+
+#payment-card {
+    box-shadow: none !important;
+    border: 2px solid red;
+}
+
+#payment-card:hover {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.empty-cart-img {
+    width: 50%;
+    margin: auto;
+    display: block;
+    margin-top: 30%;
+}
+
+.section-p-no-session-message {
+    padding: 0px 20px 0px 20px !important;
+}
+
+ion-header {
+    //padding: 0px 0px 0px 0px;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+    //padding: 5px 8px 0px 5px;
+}
+
+.header-icons {
+    /*font-size: 30px;
+    color: #f44336b5;    */
+    font-size: 30px;
+    color: #ffffff;
+    background-color: var(--ion-color-primary-shade);
+    border-radius: 100%;
+    padding: 5px;
+    margin-top: -5px;
+    box-shadow: #795548 0px 0px 20px;
+}

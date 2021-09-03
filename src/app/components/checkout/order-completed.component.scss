@@ -1,0 +1,98 @@
+ion-content {
+    text-align: center;
+    padding: 40px 0;
+    background: #EBF0F5;
+}
+
+h1 {
+    color: #88B04B;
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #404F5E;
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+i {
+    color: #9ABC66;
+    font-size: 100px;
+    line-height: 200px;
+    margin-left: -15px;
+}
+
+.card {
+    background: white;
+    padding: 60px;
+    border-radius: 4px;
+    //box-shadow: 0 2px 3px #C8D0D8;
+    display: inline-block;
+    margin: 20% auto;
+}
+
+.continue-button {
+    margin-top: 30px;
+}
+
+
+/* CUSTOM STRIPE */
+
+
+/*
+form {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.group {
+    background: #b0b0b0;
+    box-shadow: 0 7px 14px 0 rgb(49 49 93 / 10%), 0 3px 6px 0 rgb(0 0 0 / 8%);
+    border-radius: 23px;
+    margin-bottom: 20px;
+    margin: 50px 20px;
+}
+
+label {
+    position: relative;
+    color: #8898AA;
+    font-weight: 300;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+}
+
+.group label:not(:last-child) {
+    border-bottom: 1px solid #F0F5FA;
+}
+
+label>span {
+    width: 120px;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.field {
+    background: transparent;
+    font-weight: 300;
+    border: 0;
+    color: #31325F;
+    outline: none;
+    flex: 1;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: text;
+}
+
+.field::-webkit-input-placeholder {
+    color: #CFD7E0;
+}
+
+.field::-moz-placeholder {
+    color: #CFD7E0;
+}*/

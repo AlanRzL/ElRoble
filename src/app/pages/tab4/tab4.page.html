@@ -1,0 +1,141 @@
+<section *ngIf="serverProcess == true" class="ion-spinner-section">
+    <ion-spinner color="primary" name="lines"></ion-spinner>
+</section>
+
+
+
+
+<ion-content mode="ios">
+    <ion-header *ngIf="user">
+        <ion-grid class="grid-container">
+            <ion-row justify-content-around>
+
+                <ion-col size="12" class="ion-text-right ">
+                    <ion-icon name="location-outline" class="header-location-icon mr-15" (click)="presentAlertLocationConfirm()"></ion-icon>
+                    <ion-icon name="chevron-forward-outline" class="header-location-icon" (click)="presentAlertConfirm()"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-header>
+
+
+
+
+
+
+    <!-- No session -->
+    <section *ngIf="!user" class="ion-text-center tab-no-session-message" (click)="openLoginComponent()">
+        <ion-col size="12" class="my_profile_no_session">
+            <img src="../assets/svg/login.svg">
+        </ion-col>
+        <p class="section-p-no-session-message"> Inicia sesión o registrate para ver tu perfil y hacer pedidos</p>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- session -->
+    <section *ngIf="user" style="margin:5px;">
+        <ion-col size="12" class="my_profile">
+            <img src="../assets/svg/my_profile.svg">
+        </ion-col>
+
+
+        <ion-row justify-content-around style="margin: 5px 30px 30px 30px;">
+            <ion-segment (ionChange)="userSegmentChanged($event)" [(ngModel)]="segmentValue">
+                <ion-segment-button value="profile">
+                    <ion-label>Perfil</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="address">
+                    <ion-label>Dirección</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="cards">
+                    <ion-label>Tarjeta</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+        </ion-row>
+
+
+        <ion-row justify-content-around class="segment-row" *ngIf="segmentValue == 'profile' ">
+            <ion-col size="12">
+                <ion-icon name="person-outline"></ion-icon>
+                <ion-label class="form-label-text">Nombre (s)</ion-label>
+                <ion-input [(ngModel)]="user.Name" placeholder="Nombre (s)" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-icon name="call-outline"></ion-icon>
+                <ion-label class="form-label-text">Celular</ion-label>
+                <ion-input [(ngModel)]="user.Phone" placeholder="Celular" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-icon name="mail-open-outline"></ion-icon>
+                <ion-label class="form-label-text">Email</ion-label>
+                <ion-input [(ngModel)]="user.Email" placeholder="Email" clearInput></ion-input>
+            </ion-col>
+        </ion-row>
+
+
+
+        <ion-row justify-content-around class="segment-row" *ngIf="segmentValue == 'address'">
+            <ion-col size="12">
+                <ion-icon name="location-outline"></ion-icon>
+                <ion-label class="form-label-text">Dirección</ion-label>
+                <ion-input [(ngModel)]="user.Address" placeholder="Calle" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-label class="form-label-text">Colonia</ion-label>
+                <ion-input [(ngModel)]="user.AddressColone" placeholder="Colonia" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-label class="form-label-text">Codigo postal</ion-label>
+                <ion-input [(ngModel)]="user.AddressZipCode" placeholder="C.P" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-label class="form-label-text">Estado</ion-label>
+                <ion-input [(ngModel)]="user.AddressState" placeholder="Estado" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-label class="form-label-text">Ciudad</ion-label>
+                <ion-input [(ngModel)]="user.AddressCity" placeholder="Ciudad" clearInput></ion-input>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row justify-content-around class="segment-row" *ngIf="segmentValue == 'cards'">
+            <ion-col size="12">
+                <ion-icon name="card-outline"></ion-icon>
+                <ion-label class="form-label-text">Tarjeta</ion-label>
+                <ion-input [(ngModel)]="user.CardNumber" placeholder="No. de la tarjeta" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-label class="form-label-text">Mes</ion-label>
+                <ion-input [(ngModel)]="user.CardMonth" placeholder="Mes" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-label class="form-label-text">Año</ion-label>
+                <ion-input [(ngModel)]="user.CardYear" placeholder="Año" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="12">
+                <ion-label class="form-label-text">Nombre</ion-label>
+                <ion-input [(ngModel)]="user.CardName" placeholder="Nombre en la tarjeta" clearInput></ion-input>
+            </ion-col>
+        </ion-row>
+
+
+    </section>
+
+    <section *ngIf="user" style="padding:0px 15px; margin:10px;">
+        <ion-button [disabled]="serverProcess == true" expand="block" (click)="updateUser()">Guardar</ion-button>
+
+    </section>
+
+
+
+
+</ion-content>

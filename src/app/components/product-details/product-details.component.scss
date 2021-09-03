@@ -1,0 +1,86 @@
+.details-image {
+    max-width: 100%; // 155%;
+    border: 0;
+    //margin-left: -30%;
+}
+
+.round-section {
+    margin-top: -15%;
+    background-color: white;
+}
+
+.left-col {
+    background-color: white;
+    border-radius: 30px 0px 0px 0px;
+}
+
+.right-col {
+    background-color: white;
+    border-radius: 0px 30px 0px 0px;
+}
+
+.product-name {
+    padding-left: 10%;
+    padding-top: 4%;
+}
+
+.product-price {
+    padding-left: 10%;
+    padding-top: 5%;
+}
+
+.product-description {
+    background-color: white;
+    padding-top: 0%;
+    font-size: 14px;
+    padding: 3px 7% 0px 7%;
+}
+
+.product-qty-cart {
+    padding-top: 5% !important;
+}
+
+ion-footer {
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-bottom: 2%;
+}
+
+@media screen and (max-height:975px) {
+    .details-image {
+        margin-left: 0; // -30%;
+    }
+}
+
+ion-header {
+    //padding: 0px 0px 0px 0px;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+    color: white;
+    background-color: red;
+    padding: 5px 8px 0px 5px;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.col-category-name {
+    padding-top: 10px;
+}
+
+.header-category-name {
+    font-family: Acumin !important;
+    font-size: 25px;
+    color: white;
+}
+
+.header-icons {
+    font-size: 30px;
+}
+
+.ion-text-left {
+    padding-left: 0px;
+    padding-right: 0px;
+}

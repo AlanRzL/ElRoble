@@ -1,0 +1,71 @@
+.grid-container {
+    padding: 0px 5px 0px 5px;
+}
+
+
+/*ion-card {
+    //background-color: var(--ion-color-primary);
+    //text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    //height: 185px;
+}*/
+
+.card-title {
+    /* margin-bottom: 10px; */
+    font-family: Acumin !important;
+    font-size: 11px;
+    color: var(--ion-color-primary);
+    /* width: 100%; */
+    background-color: white;
+    /* padding-top: 2px; */
+    /* border-radius: 8px;*/
+}
+
+.header-card {
+    --background: url('/assets/img/banner_1.png') no-repeat 50% 50%;
+    height: 180px;
+    //--background: url("/assets/img/INICIO_OPACIDAD84.png") /*55% 50%/*/145% 100% no-repeat
+}
+
+.product-name {
+    font-family: Acumin !important;
+}
+
+.product-price {
+    font-size: 10px;
+    margin-top: -2px;
+    margin-left: -5px;
+    font-weight: bold;
+}
+
+ion-header {
+    //padding: 0px 0px 0px 0px;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+    color: white;
+    background-color: red;
+    padding: 10px 8px 0px 5px;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.col-category-name {
+    padding-top: 10px;
+}
+
+.header-category-name {
+    font-family: Acumin !important;
+    font-size: 21px;
+    color: white;
+}
+
+.header-icons {
+    font-size: 30px;
+}
+
+.ion-text-left {
+    padding-left: 0px;
+    padding-right: 0px;
+}

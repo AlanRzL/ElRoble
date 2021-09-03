@@ -1,0 +1,146 @@
+<ion-content color="light" mode="ios">
+
+    <ion-header>
+        <ion-grid class="grid-container">
+            <ion-row justify-content-around>
+                <ion-col size="3" class="ion-text-left" (click)="closeModal()">
+                    <ion-icon color="light" name="chevron-back-outline" class="header-icons"></ion-icon>
+                </ion-col>
+                <ion-col size="6" class="ion-text-center col-category-name">
+                    <label class="header-category-name">{{Order.Status}}</label>
+                </ion-col>
+                <ion-col size="3" class="ion-text-right">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-header>
+
+    <ion-grid class="grid-container" style="margin-top: 15%;">
+    </ion-grid>
+
+
+    <ion-card style="box-shadow: none !important;">
+        <!--(click)="showDetails(work)"-->
+
+        <ion-row class="ion-no-padding">
+            <ion-col size="12">
+                <ion-label>
+                    <div class="align">
+                        <p class="delivery-address-name"> Productos</p>
+                    </div>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-list class="ion-no-padding">
+
+            <ion-item class="ion-no-padding" *ngFor="let product of Order.Products">
+                <ion-col size="3" class="ion-no-margin">
+                    <img class="border-radius image-work" [src]=" product.Photo | imageSanitizer">
+                </ion-col>
+                <ion-col size="6" class="ion-no-margin mt-20">
+                    <ion-grid class="ion-no-padding ion-no-margin">
+                        <ion-row>
+                            <ion-col size="12" class="ion-text-left">
+                                <div class="align">
+                                    <p class="product-name ion-text-nowrap">{{product.Name}}</p>
+                                    <p class="card-date ion-text-wrap ion-text-capitalize">{{product.Price | currency : 'USD' : 'symbol' : '2.0-2' }} x {{product.Unit}}</p>
+                                    <p class="card-date ion-text-wrap ion-text-capitalize">{{product.Qty}}{{product.Unit}}</p>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-col>
+                <ion-col size="3" class="ion-text-right ion-no-margin">
+                    <label class="single-product-total-price">{{product.Total | currency : 'USD' : 'symbol' : '2.2-2' }}</label>
+                </ion-col>
+            </ion-item>
+
+
+
+
+
+        </ion-list>
+    </ion-card>
+
+
+
+
+
+
+
+
+
+</ion-content>
+
+
+<ion-footer no-border color="light" mode="ios">
+
+    <ion-card style="box-shadow: none !important;">
+        <ion-list class="ion-no-padding">
+            <ion-row class="ion-no-padding">
+                <ion-col size="12">
+                    <ion-label>
+                        <div class="align">
+                            <p class="delivery-address-name"> Datos de la orden</p>
+                        </div>
+                    </ion-label>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="ion-no-padding mb-15">
+                <ion-col size="12">
+                    <ion-label>
+                        <p class="delivery-address-text ion-text-wrap ion-text-capitalize">No.: {{Order.ID_Order}}</p>
+                        <p class="delivery-address-text  ion-text-wrap ion-text-capitalize">Status: {{Order.Status}}</p>
+                        <p class="delivery-address-text  ion-text-wrap ion-text-capitalize">Creada: {{Order.Created}}</p>
+                    </ion-label>
+                </ion-col>
+            </ion-row>
+
+
+            <ion-row class="ion-no-padding">
+                <ion-col size="6">
+                    <ion-label>
+                        <p class="delivery-address-text ion-text-wrap ion-text-capitalize">{{Order.Name}}</p>
+                        <p class="delivery-address-text  ion-text-wrap ion-text-capitalize">{{Order.Phone}}</p>
+                    </ion-label>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-label>
+                        <p class="delivery-address-text ion-text-wrap ion-text-capitalize">{{Order.Address}}</p>
+                        <p class="delivery-address-text  ion-text-wrap ion-text-capitalize">Col. {{Order.AddressColone}} c.p {{Order.AddressZipCode}}</p>
+                        <p class="delivery-address-text  ion-text-wrap ion-text-capitalize">{{Order.AddressCity}} {{Order.AddressState}}</p>
+                    </ion-label>
+                </ion-col>
+            </ion-row>
+
+
+
+
+
+        </ion-list>
+    </ion-card>
+
+
+
+
+    <ion-grid class="ion-no-padding ion-no-margin">
+        <div class="pay-total-amount-card">
+            <ion-row>
+                <ion-col class="ion-text-center">
+                    <ion-row class="product-qty-cart">
+                        <ion-col>
+                            <h5 style="margin-top: 8px;">Total:</h5>
+                            <h1 style="margin-bottom: 8px;">{{Order.Total | currency : 'USD' : 'symbol' : '2.2-2' }}</h1>
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </div>
+
+    </ion-grid>
+
+
+</ion-footer>

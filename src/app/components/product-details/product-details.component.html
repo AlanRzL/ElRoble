@@ -1,0 +1,72 @@
+<ion-content mode="ios">
+
+    <ion-header>
+        <ion-grid class="grid-container">
+            <ion-row justify-content-around>
+                <ion-col size="2" class="ion-text-left" (click)="closeModal()">
+                    <ion-icon color="light" name="chevron-back-outline" class="header-icons"></ion-icon>
+                </ion-col>
+                <ion-col size="8" class="ion-text-center col-category-name">
+                    <label class="header-category-name">{{Product.Name}}</label>
+                </ion-col>
+                <ion-col size="2" class="ion-text-right" (click)="goToCart()">
+                    <ion-icon color="light" name="cart-outline" class="header-icons"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-header>
+
+
+
+    <img class="details-image" [src]="Product.Image | imageSanitizer" *ngIf="Photo">
+    <ion-grid class="ion-no-padding ion-no-margin">
+        <ion-row justify-content-around class="round-section">
+            <ion-col size="7" class="left-col">
+                <h1 class="product-name">{{Product.Name}}</h1>
+            </ion-col>
+            <ion-col size="5" class="right-col ion-text-center">
+                <h1 class="product-price">${{Product.Price}}</h1>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid class="ion-no-margin ion-no-padding">
+        <ion-row>
+            <ion-col size="12" class="product-description">
+                <ion-label> {{Product.Description}}
+
+
+
+                </ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+
+<ion-footer no-border mode="ios">
+
+    <ion-grid class="ion-no-padding ion-no-margin">
+        <ion-row>
+            <ion-col size="6" class="ion-text-center">
+                <ion-row class="product-qty-cart">
+                    <ion-col size="4">
+                        <ion-button size="small" color="primary" (click)="remove()">
+                            <ion-icon name="remove-outline"></ion-icon>
+                        </ion-button>
+                    </ion-col>
+                    <ion-col size="4" class="ion-text-center">
+                        <label>{{productQty}}</label>
+                    </ion-col>
+                    <ion-col size="4" class="ion-text-center">
+                        <ion-button size="small" color="primary" (click)="add()">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+                <ion-button color="primary" (click)="addNewProduct()">Agregar</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

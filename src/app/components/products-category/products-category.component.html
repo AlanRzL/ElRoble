@@ -1,0 +1,224 @@
+<ion-content mode="ios">
+
+    <ion-header>
+        <ion-grid class="grid-container">
+            <ion-row justify-content-around>
+                <ion-col size="3" class="ion-text-left" (click)="closeModal()">
+                    <ion-icon color="light" name="chevron-back-outline" class="header-icons"></ion-icon>
+                </ion-col>
+                <ion-col size="6" class="ion-text-center col-category-name">
+                    <label class="header-category-name">{{ID_CategoryName}}</label>
+                </ion-col>
+                <ion-col size="3" class="ion-text-right" (click)="goToCart()">
+                    <ion-icon color="light" name="cart-outline" class="header-icons"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-header>
+
+
+    <ion-grid class="grid-container" style="margin-top: 15%;">
+    </ion-grid>
+
+
+
+
+
+
+    <!--<app-products [products]="products"></app-products>-->
+
+
+
+
+    <ion-grid class="grid-container" *ngIf="isLoading == true">
+        <ion-row>
+
+            <ion-col size="6">
+                <ion-card class="ion-no-padding ion-no-margin ion-text-center menu-card">
+                    <ion-list-header style="padding: 10px;">
+                        <ion-skeleton-text animated style="
+                        margin: 5%;
+                        width: 90%;
+                        height: 110px;"></ion-skeleton-text>
+                    </ion-list-header>
+                    <ion-label>
+                        <h3 style="
+                        margin-top: -5%;
+                        margin-left: 10%;
+                        margin-bottom: 10%;">
+                            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                        </h3>
+                    </ion-label>
+                </ion-card>
+            </ion-col>
+
+            <ion-col size="6">
+                <ion-card class="ion-no-padding ion-no-margin ion-text-center menu-card">
+                    <ion-list-header style="padding: 10px;">
+                        <ion-skeleton-text animated style="
+                        margin: 5%;
+                        width: 90%;
+                        height: 110px;"></ion-skeleton-text>
+                    </ion-list-header>
+                    <ion-label>
+                        <h3 style="
+                        margin-top: -5%;
+                        margin-left: 10%;
+                        margin-bottom: 10%;">
+                            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                        </h3>
+                    </ion-label>
+                </ion-card>
+            </ion-col>
+
+
+            <ion-col size="6">
+                <ion-card class="ion-no-padding ion-no-margin ion-text-center menu-card">
+                    <ion-list-header style="padding: 10px;">
+                        <ion-skeleton-text animated style="
+                        margin: 5%;
+                        width: 90%;
+                        height: 110px;"></ion-skeleton-text>
+                    </ion-list-header>
+                    <ion-label>
+                        <h3 style="
+                        margin-top: -5%;
+                        margin-left: 10%;
+                        margin-bottom: 10%;">
+                            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                        </h3>
+                    </ion-label>
+                </ion-card>
+            </ion-col>
+
+            <ion-col size="6">
+                <ion-card class="ion-no-padding ion-no-margin ion-text-center menu-card">
+                    <ion-list-header style="padding: 10px;">
+                        <ion-skeleton-text animated style="
+                        margin: 5%;
+                        width: 90%;
+                        height: 110px;"></ion-skeleton-text>
+                    </ion-list-header>
+                    <ion-label>
+                        <h3 style="
+                        margin-top: -5%;
+                        margin-left: 10%;
+                        margin-bottom: 10%;">
+                            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                        </h3>
+                    </ion-label>
+                </ion-card>
+            </ion-col>
+
+
+
+            <ion-col size="6">
+                <ion-card class="ion-no-padding ion-no-margin ion-text-center menu-card">
+                    <ion-list-header style="padding: 10px;">
+                        <ion-skeleton-text animated style="
+                        margin: 5%;
+                        width: 90%;
+                        height: 110px;"></ion-skeleton-text>
+                    </ion-list-header>
+                    <ion-label>
+                        <h3 style="
+                        margin-top: -5%;
+                        margin-left: 10%;
+                        margin-bottom: 10%;">
+                            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                        </h3>
+                    </ion-label>
+                </ion-card>
+            </ion-col>
+
+            <ion-col size="6">
+                <ion-card class="ion-no-padding ion-no-margin ion-text-center menu-card">
+                    <ion-list-header style="padding: 10px;">
+                        <ion-skeleton-text animated style="
+                        margin: 5%;
+                        width: 90%;
+                        height: 110px;"></ion-skeleton-text>
+                    </ion-list-header>
+                    <ion-label>
+                        <h3 style="
+                        margin-top: -5%;
+                        margin-left: 10%;
+                        margin-bottom: 10%;">
+                            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                        </h3>
+                    </ion-label>
+                </ion-card>
+            </ion-col>
+
+            <ion-col size="6">
+                <ion-card class="ion-no-padding ion-no-margin ion-text-center menu-card">
+                    <ion-list-header style="padding: 10px;">
+                        <ion-skeleton-text animated style="
+                        margin: 5%;
+                        width: 90%;
+                        height: 110px;"></ion-skeleton-text>
+                    </ion-list-header>
+                    <ion-label>
+                        <h3 style="
+                        margin-top: -5%;
+                        margin-left: 10%;
+                        margin-bottom: 10%;">
+                            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                        </h3>
+                    </ion-label>
+                </ion-card>
+            </ion-col>
+
+            <ion-col size="6">
+                <ion-card class="ion-no-padding ion-no-margin ion-text-center menu-card">
+                    <ion-list-header style="padding: 10px;">
+                        <ion-skeleton-text animated style="
+                        margin: 5%;
+                        width: 90%;
+                        height: 110px;"></ion-skeleton-text>
+                    </ion-list-header>
+                    <ion-label>
+                        <h3 style="
+                        margin-top: -5%;
+                        margin-left: 10%;
+                        margin-bottom: 10%;">
+                            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+                        </h3>
+                    </ion-label>
+                </ion-card>
+            </ion-col>
+
+
+        </ion-row>
+    </ion-grid>
+
+
+
+
+    <ion-grid class="grid-container" *ngIf="isLoading == false">
+        <ion-row>
+            <ion-col size="6" *ngFor="let product of products">
+                <ion-card class="ion-no-padding ion-no-margin ion-text-center menu-card" (click)="openProductDetails(product)">
+                    <img [src]="product.Image | imageSanitizer" />
+                    <div class="card-title">
+
+                        <ion-grid class="grid-container">
+                            <ion-row justify-content-around>
+                                <ion-col size="8" class="ion-text-left product-name ion-text-nowrap">
+                                    {{product.Name}}
+                                </ion-col>
+                                <ion-col size="4" class="ion-text-right product-price">
+                                    $ {{product.Price}}
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+
+                    </div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+
+</ion-content>

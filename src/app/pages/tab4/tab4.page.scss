@@ -1,0 +1,94 @@
+ion-input {
+    font-family: "GilroyLight";
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #7f8490;
+    background-color: #fafbfc;
+    border-bottom: 1px solid #00000021;
+    --padding-start: 10px !important
+}
+
+.input-label-text {
+    font-family: 'GilroyLight';
+    //font-family: 'GilroyExtraBold';
+    font-size: .7rem;
+    padding-bottom: 0px !important;
+}
+
+.form-label-text {
+    padding-left: 8px;
+}
+
+ion-col {
+    margin-bottom: 14px;
+}
+
+.tab-no-session-message {
+    font-family: "GilroyLight";
+    height: auto;
+    /*font-size: 1.2rem;*/
+    font-weight: 400;
+    /*color: #7f8490 !important;*/
+    color: var(--ion-color-primary) !important;
+    padding: 10px;
+    margin-top: 20%;
+}
+
+.my_profile {
+    img {
+        width: 50%;
+        margin: auto;
+        display: block;
+        border-radius: 100%;
+        border: solid #8c715c 2px;
+    }
+}
+
+.my_profile_no_session {
+    img {
+        margin-top: 30% !important;
+        width: 50%;
+        margin: auto;
+        display: block;
+    }
+}
+
+.section-p-no-session-message {
+    padding: 0px 20px 0px 20px;
+}
+
+.segment-row {
+    margin: 20px 10px 10px 10px;
+}
+
+ion-header {
+    //padding: 0px 0px 0px 0px;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+    padding: 5px 8px 0px 5px;
+}
+
+.header-icons {
+    font-size: 30px;
+    color: #f44336b5;
+    //color: var(--ion-color-primary-shade);
+}
+
+.header-location-icon {
+    /*font-size: 30px;
+    color: #f44336b5;    */
+    font-size: 30px;
+    color: #ffffff;
+    background-color: var(--ion-color-primary-shade);
+    border-radius: 100%;
+    padding: 5px;
+    box-shadow: #795548 0px 0px 20px;
+}
+
+.mr-15 {
+    margin-right: 15px !important;
+}

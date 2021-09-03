@@ -1,0 +1,7 @@
+{
+  "name": "elroble",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,120 @@
+<section *ngIf="serverProcess == true" class="ion-spinner-section">
+    <ion-spinner color="primary" name="lines"></ion-spinner>
+</section>
+
+<ion-content mode="ios">
+    <ion-header *ngIf="serverProcess==false">
+        <ion-grid class="grid-container">
+            <ion-row justify-content-around>
+                <ion-col size="12" class="ion-text-left ">
+                    <ion-icon name="close-circle-outline" class="header-icons" (click)="closeLoginComponent()"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-header>
+
+
+
+
+    <section style="margin:5px;">
+
+        <ion-col size="12" class="login_img">
+            <img src="../assets/svg/login.svg">
+        </ion-col>
+
+
+
+        <ion-row justify-content-around class="segment-row" *ngIf="segmentValue == 'login' ">
+            <ion-col size="12">
+                <h2>Login</h2>
+                <ion-label class="form-label-text">Email</ion-label>
+                <ion-input [(ngModel)]="loginEmail" placeholder="Email" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="12">
+                <ion-label class="form-label-text">Contraseña</ion-label>
+                <ion-input type="password" [(ngModel)]="loginPassword" placeholder="Celular" clearInput></ion-input>
+            </ion-col>
+
+            <ion-col size="12">
+                <ion-button [disabled]="loginEmail == '' ||  loginPassword == ''  || serverProcess == true" expand="block" (click)="login()">Login</ion-button>
+            </ion-col>
+
+
+            <ion-col size="12" class="ion-text-center">
+                <p class="ion-no-margin" (click)="userSegmentChanged('register')"> ¿No tienes una cuenta? registrate</p>
+                <p class="ion-no-margin"> ó </p>
+                <p class="ion-no-margin" (click)="userSegmentChanged('recovery')"> ¿Olvidaste tu contraseña? recuperala</p>
+            </ion-col>
+        </ion-row>
+
+
+
+        <ion-row justify-content-around class="segment-row" *ngIf="segmentValue == 'register'">
+            <ion-col size="12">
+                <h2>Registrarse</h2>
+                <ion-label class="form-label-text">Nombre (s)</ion-label>
+                <ion-input [(ngModel)]="user.Name" placeholder="Nombre (s)" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="12">
+                <ion-label class="form-label-text">Dirección</ion-label>
+                <ion-input [(ngModel)]="user.Address" placeholder="Calle y Número" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-label class="form-label-text">Estado</ion-label>
+                <ion-input [(ngModel)]="user.AddressState" placeholder="Estado" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-label class="form-label-text">Ciudad</ion-label>
+                <ion-input [(ngModel)]="user.AddressCity" placeholder="Ciudad" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-label class="form-label-text">Email</ion-label>
+                <ion-input [(ngModel)]="user.Email" placeholder="Email" clearInput></ion-input>
+            </ion-col>
+
+            <ion-col size="6">
+                <ion-label class="form-label-text">Contraseña</ion-label>
+                <ion-input type="password" [(ngModel)]="user.Password" placeholder="Password" clearInput></ion-input>
+            </ion-col>
+
+            <ion-col size="12">
+                <ion-button [disabled]="user.Name == '' ||  user.Address == ''  ||  user.AddressState == ''   ||  user.AddressCity == ''   ||  user.Email == ''  ||  user.Password == ''  || serverProcess == true" expand="block" (click)="register()">Registrarse</ion-button>
+            </ion-col>
+
+
+            <ion-col size="12" class="ion-text-center">
+                <p class="ion-no-margin" (click)="userSegmentChanged('login')"> ¿Ya tienes una cuenta? inicia sesion</p>
+            </ion-col>
+
+        </ion-row>
+
+
+
+        <ion-row justify-content-around class="segment-row" *ngIf="segmentValue == 'recovery' ">
+            <ion-col size="12">
+                <h2>Recuperar</h2>
+                <ion-label class="form-label-text">Email</ion-label>
+                <ion-input [(ngModel)]="recoveryEmail" placeholder="Email" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="12">
+                <ion-button [disabled]="recoveryEmail == ''  || serverProcess == true" expand="block" (click)="recovery()">Recuperar</ion-button>
+            </ion-col>
+
+
+            <ion-col size="12" class="ion-text-center">
+                <p class="ion-no-margin" (click)="userSegmentChanged('login')"> ¿Ya tienes una cuenta? inicia sesion</p>
+            </ion-col>
+        </ion-row>
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+</ion-content>

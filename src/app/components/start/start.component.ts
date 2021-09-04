@@ -43,21 +43,27 @@ export class StartComponent implements OnInit {
 
   async loginFacebook() {
     await this.facebook.logout();
-    this.facebook.login(['email','public_profile','user_link','user_photos']).then((value: FacebookLoginResponse) => {
-      console.log("Login success", value);
-      this.facebook.getCurrentProfile().then(profile => {
-        console.log(profile);
-      });
-      this.facebook.api('me?fields=id,name,email,picture.width(400).height(400)',[]).then(async pic => {
-        console.log(pic)
-        const alert = await this.alert.create({
-          message: JSON.stringify(pic)
+    this.facebook.getLoginStatus().then(value => {
+      if (value.status !== 'connected'){
+        this.facebook.login(['email','public_profile','user_photos']).then((value: FacebookLoginResponse) => {
+          console.log("Login success", value);
+          this.facebook.api('me?fields=id,name,email,picture.width(400).height(400)',[]).then(async pic => {
+            console.log(pic)
+            const alert = await this.alert.create({
+              message: JSON.stringify(pic)
+            })
+            alert.present()
+            //registrar el usuario
+            //guardar esos del usuario en tu back
+          })
+        }).catch(err => {
+          console.log("Acurrio un error al intertar logearse", err)
         })
-        alert.present()
-      })
-    }).catch(err => {
-      console.log("Acurrio un error al intertar logearse", err)
+      } else {
+        //get perfil by value.authReponse.userID
+      }
     })
+
 
     // this.authService.setAuth(true);
     // let autenticado = this.authService.isAuthFunction();

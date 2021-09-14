@@ -43,12 +43,12 @@ export class StartComponent implements OnInit {
 
   async loginFacebook() {
     await this.facebook.logout();
-    this.facebook.login(['email','public_profile','user_link','user_photos']).then((value: FacebookLoginResponse) => {
+    this.facebook.login(['email','public_profile']).then((value: FacebookLoginResponse) => {
       console.log("Login success", value);
       this.facebook.getCurrentProfile().then(profile => {
         console.log(profile);
       });
-      this.facebook.api('me?fields=id,name,email,picture.width(400).height(400)',[]).then(async pic => {
+      this.facebook.api('me?fields=id,name,email',[]).then(async pic => {
         console.log(pic)
         const alert = await this.alert.create({
           message: JSON.stringify(pic)

@@ -3,7 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { StartComponent } from './components/start/start.component';
 import { AuthGuard } from './guards/auth.guard';
-import { ExploreContainerComponent } from './pages/explore-container/explore-container.component';
 
 const routes: Routes = [
   {
@@ -15,9 +14,6 @@ const routes: Routes = [
     path: 'start', component: StartComponent
   },{
     path: 'login', component: LoginComponent
-  },
-  {
-    path: 'ExploreContainer', component: ExploreContainerComponent
   },
 ];
 @NgModule({

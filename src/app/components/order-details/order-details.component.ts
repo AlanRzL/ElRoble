@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
-import { OrderResponse } from 'src/app/interfaces/interfaces';
+import { OrderResponse, OrderModel } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-order-details',
@@ -10,7 +10,7 @@ import { OrderResponse } from 'src/app/interfaces/interfaces';
 export class OrderDetailsComponent implements OnInit {
 
  
-  @Input() Order: OrderResponse;
+  @Input() Order: OrderModel;
   
   Photo1:string= "https://eventserp.com/elroble/img/1.png";
 

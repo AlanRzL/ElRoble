@@ -127,8 +127,42 @@ export class OrderModel{
     AddressState: string;
     AddressCity: string;
     StripeID: string;
+    Status:string;
+    Products: OrderProductsModel[];
+
+    AdminNotes: string;
+    Created: string;
+    CreatedBy: string;
+    ID_Order:  number;
+    Total: string;
+    TotalProducts:string;
+    Updated: string;
+    UpdatedBy: string;
+    UserNotes:string;
     orderProductsArray: string;
+
+
 }
+
+
+export class OrderProductsModel{
+    ID_OrderProduct: number;
+    ID_Order: number;
+    ID_Product: number;
+    Name:string;
+    Photo:string;
+    Unit:string;
+    Price:string;
+    Qty:string;
+    Total:string;
+    Created:string;
+    CreatedBy:string;
+    Updated:string;
+    UpdatedBy:string;
+
+
+}
+
 
 
 

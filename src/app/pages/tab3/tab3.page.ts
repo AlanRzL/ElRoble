@@ -170,7 +170,22 @@ async presentAlertConfirmPay() {
       }, {
         text: 'Si',
         handler: () => {
-          this.setupStripe();
+
+          if(!this.user.Address || !this.user.AddressCity || !this.user.AddressColone || !this.user.AddressState || !this.user.AddressZipCode || !this.user.Phone)
+          {
+            this.presentAlert("Error","Faltan datos de completar en su perfil / dirección, no es posible completar esta orden.");
+          }else{
+            this.setupStripe();
+          }
+
+
+
+
+
+
+
+
+          //
         }
       }
     ]

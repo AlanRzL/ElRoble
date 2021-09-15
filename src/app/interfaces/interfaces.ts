@@ -85,6 +85,7 @@ export interface UserResponse{
 
 export class UserModel{
     ID_User: number;
+    ID_Facebook:string;
     Name: string;
     Phone: string;
     Email: string;
@@ -208,4 +209,12 @@ export class UserNotifications{
     Created: string;
     CreatedBy: string;
     Status: string;
+}
+
+
+
+export interface facebookLoginResponse{
+    id: string;
+    name: string;
+    email: string;
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {UserModel} from 'src/app/interfaces/interfaces';
+import {facebookLoginResponse, UserModel} from 'src/app/interfaces/interfaces';
 import {AuthService} from 'src/app/services/auth.service';
 import {SessionService} from 'src/app/services/session.service';
 import {Facebook, FacebookLoginResponse} from "@ionic-native/facebook/ngx";
@@ -14,6 +14,7 @@ import {AlertController} from "@ionic/angular";
 })
 export class StartComponent implements OnInit {
 
+  serverProcess: boolean = false;
   user = new UserModel();
 
   constructor(
@@ -21,7 +22,7 @@ export class StartComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private readonly facebook: Facebook,
-    private readonly alert: AlertController
+    private readonly alertController: AlertController
   ) {
   }
 
@@ -42,6 +43,9 @@ export class StartComponent implements OnInit {
 
 
   async loginFacebook() {
+    
+
+
     await this.facebook.logout();
     this.facebook.login(['email','public_profile']).then((value: FacebookLoginResponse) => {
       console.log("Login success", value);
@@ -50,14 +54,73 @@ export class StartComponent implements OnInit {
       });
       this.facebook.api('me?fields=id,name,email',[]).then(async pic => {
         console.log(pic)
-        const alert = await this.alert.create({
+        /*const alert = await this.alertController.create({
           message: JSON.stringify(pic)
         })
-        alert.present()
+        alert.present();*/
+            //console.log(pic.name);
+            //alert(pic.name);
+            this.serverProcess = true;
+            let facebookSession = JSON.stringify(pic);
+            this.sessionService.getUserLoginWithFB(facebookSession).subscribe( resp =>{
+              console.log(resp);
+              setTimeout(()=>{  
+                this.serverProcess = false;
+                if(resp.statusID == 200){
+        
+                  setTimeout(()=>{  
+                    this.authService.setAuth(true);
+                    let autenticado = this.authService.isAuthFunction();
+                    console.log("autenticado");
+                    this.router.navigateByUrl('/tabs/tab1');
+                  }, 500);
+              
+        
+                  
+                }else{
+                  this.presentAlert(resp.statusName,resp.statusDescription);
+                }
+              }, 1500);
+            });
+    
+
+
+
       })
     }).catch(err => {
       console.log("Acurrio un error al intertar logearse", err)
     })
+
+
+
+
+
+    
+
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
 
     // this.authService.setAuth(true);
     // let autenticado = this.authService.isAuthFunction();
@@ -86,5 +149,19 @@ export class StartComponent implements OnInit {
     }
   }
 
+
+
+  async presentAlert(header, message) {
+    const alert = await this.alertController.create({
+      header: header,
+      message: message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
 
 }

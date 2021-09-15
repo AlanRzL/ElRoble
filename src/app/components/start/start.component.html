@@ -1,5 +1,8 @@
-<ion-content padding class="background" mode="ios">
+<section *ngIf="serverProcess == true" class="ion-spinner-section">
+    <ion-spinner color="primary" name="lines"></ion-spinner>
+</section>
 
+<ion-content padding class="background" mode="ios">
     <div class="container ion-text-center">
         <img src="../assets/img/personaje.png">
         <div class="container-button-fb" (click)="loginFacebook()">

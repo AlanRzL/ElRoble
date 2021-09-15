@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ResponseProduct, UserModel, UserResponse } from '../interfaces/interfaces';
+import { facebookLoginResponse, ResponseProduct, UserModel, UserResponse } from '../interfaces/interfaces';
 import { map } from 'rxjs/operators'
 
 const URL = 'https://carniceriaelroble.com/app/controllers';
@@ -73,5 +73,34 @@ export class SessionService {
     closeLocalUser(){
       localStorage.removeItem('userArray');
     }
+
+
+
+
+
+
+
+
+
+
+
+  getUserLoginWithFB(loginUser:any){
+    console.log(loginUser);
+    return this.http.post<UserResponse>(
+    `${URL}/service_facebookLogin.php?`, loginUser,
+    {
+      headers : {
+          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    }
+  ).pipe( map( resp=>{
+      if(resp.statusID == 200){
+        this.setLocalUser(resp.data[0]);
+      }
+       return resp;
+    })
+  )//pipe
+}
+
 
 }

@@ -63,18 +63,27 @@ export class Tab4Page  {
 
 
   updateUser(){
-    this.serverProcess = true;
-    this.sessionService.postUser(this.user, "update").subscribe( resp =>{
-      console.log(resp);
-      setTimeout(()=>{  
-        this.serverProcess = false;
-        if(resp.statusID == 200){
-          this.presentAlert(resp.statusName,resp.statusDescription);
-        }else{
-          this.presentAlert(resp.statusName,resp.statusDescription);
-        }
-      }, 1500);
-    });
+
+    if(!this.user.Name || !this.user.Phone || !this.user.Email || !this.user.Password)
+    {
+      this.presentAlert("Error","Es necesario completar la información para continuar");
+    }else{
+
+        this.serverProcess = true;
+        this.sessionService.postUser(this.user, "update").subscribe( resp =>{
+          console.log(resp);
+          setTimeout(()=>{  
+            this.serverProcess = false;
+            if(resp.statusID == 200){
+              this.presentAlert(resp.statusName,resp.statusDescription);
+            }else{
+              this.presentAlert(resp.statusName,resp.statusDescription);
+            }
+          }, 1500);
+        });
+
+    }
+
   }
 
 

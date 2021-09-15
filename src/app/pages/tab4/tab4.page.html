@@ -55,9 +55,9 @@
                 <ion-segment-button value="address">
                     <ion-label>Dirección</ion-label>
                 </ion-segment-button>
-                <ion-segment-button value="cards">
+                <!-- <ion-segment-button value="cards">
                     <ion-label>Tarjeta</ion-label>
-                </ion-segment-button>
+                </ion-segment-button>-->
             </ion-segment>
         </ion-row>
 
@@ -68,15 +68,20 @@
                 <ion-label class="form-label-text">Nombre (s)</ion-label>
                 <ion-input [(ngModel)]="user.Name" placeholder="Nombre (s)" clearInput></ion-input>
             </ion-col>
+            <ion-col size="12">
+                <ion-icon name="mail-open-outline"></ion-icon>
+                <ion-label class="form-label-text">Email</ion-label>
+                <ion-input [(ngModel)]="user.Email" placeholder="Email" clearInput></ion-input>
+            </ion-col>
+            <ion-col size="6">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <ion-label class="form-label-text">Contraseña</ion-label>
+                <ion-input [(ngModel)]="user.Password" clearInput></ion-input>
+            </ion-col>
             <ion-col size="6">
                 <ion-icon name="call-outline"></ion-icon>
                 <ion-label class="form-label-text">Celular</ion-label>
                 <ion-input [(ngModel)]="user.Phone" placeholder="Celular" clearInput></ion-input>
-            </ion-col>
-            <ion-col size="6">
-                <ion-icon name="mail-open-outline"></ion-icon>
-                <ion-label class="form-label-text">Email</ion-label>
-                <ion-input [(ngModel)]="user.Email" placeholder="Email" clearInput></ion-input>
             </ion-col>
         </ion-row>
 
